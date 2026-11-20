@@ -1,0 +1,1490 @@
+{
+  "aggregate": {
+    "bytes": 3712601,
+    "files": 88,
+    "kinds": {
+      "automation": 25,
+      "config": 2,
+      "doc": 12,
+      "manifest": 2,
+      "other": 17,
+      "script": 7,
+      "skill": 22,
+      "workflow": 1
+    }
+  },
+  "approved_at": "2026-11-20T05:36:40Z",
+  "approved_by": "anglelion",
+  "approved_commit": "dbc67bc39bc5c9958543fbf6c85bc511c3454d42",
+  "files": {
+    ".github/CODEOWNERS": {
+      "binary": false,
+      "bytes": 331,
+      "kind": "other",
+      "lines": 7,
+      "sha256": "efab0a64dc5006ac7c43ff333f228b097b7479563ea6b86e4aa615fdbbf820ef",
+      "signals": {
+        "tools": {
+          "github/workflows": 5
+        }
+      }
+    },
+    ".github/plugin/marketplace.json": {
+      "binary": false,
+      "bytes": 514,
+      "kind": "manifest",
+      "lines": 17,
+      "sha256": "01dce652f0c1173516cbf0e42c656a8648aef0b231421fba0b8be078666bb23c",
+      "signals": {}
+    },
+    ".github/workflows/update-review.yml": {
+      "binary": false,
+      "bytes": 2514,
+      "kind": "workflow",
+      "lines": 86,
+      "sha256": "f6feba1db41b9341fb7245da3f4060b08c56bf48bb1a63a7435eded7b86630f0",
+      "signals": {
+        "ci": {
+          "permission-write": 18
+        },
+        "guardrails": {
+          "read-only": 66
+        },
+        "secrets": {
+          "token-name": 68
+        },
+        "unpinned": {
+          "actions/checkout@v4": 31,
+          "actions/setup-python@v5": 36,
+          "actions/upload-artifact@v4": 58
+        }
+      }
+    },
+    "LICENSE": {
+      "binary": false,
+      "bytes": 1060,
+      "kind": "other",
+      "lines": 22,
+      "sha256": "2510b446bc1f0cf9702453075d20cd88631e20e5642658edb7325d9c1eb534f7",
+      "signals": {}
+    },
+    "README.md": {
+      "binary": false,
+      "bytes": 8482,
+      "kind": "doc",
+      "lines": 154,
+      "sha256": "0d851e82d678f366446e3a1a001e724fa0a42471f0a48c54bcce7aac2980535a",
+      "signals": {
+        "autonomy": {
+          "raise": 88
+        },
+        "domains": {
+          "gist.github.com": 30
+        },
+        "outside-write": {
+          "outside-path": 120
+        },
+        "tools": {
+          "github/lever": 8,
+          "github/skills": 132,
+          "github/workflows": 113
+        }
+      }
+    },
+    "automations/README.md": {
+      "binary": false,
+      "bytes": 9021,
+      "kind": "automation",
+      "lines": 65,
+      "sha256": "947d19c0ae74228369d62fbfc0d5e87d282e4f1ce5a700a120096c9d13c997c3",
+      "signals": {
+        "autonomy": {
+          "raise": 11
+        },
+        "domains": {
+          "docs.github.com": 3
+        },
+        "guardrails": {
+          "never-write": 14,
+          "read-only": 20
+        },
+        "tools": {
+          "github/lever": 36,
+          "github/update_issue_body": 31
+        }
+      }
+    },
+    "automations/audit-lane/README.md": {
+      "binary": false,
+      "bytes": 5137,
+      "kind": "automation",
+      "lines": 68,
+      "sha256": "a4412536e227a488d1e8a32e27f4fdf16fa408a3971adfc42d9a35eca5c4d66a",
+      "signals": {
+        "guardrails": {
+          "never-write": 3,
+          "no-secrets": 30,
+          "read-only": 3
+        },
+        "tools": {
+          "github/add_issue_comment": 64,
+          "github/create_issue": 64,
+          "github/update_issue_body": 64
+        }
+      }
+    },
+    "automations/audit-lane/prompt.md": {
+      "binary": false,
+      "bytes": 2766,
+      "kind": "automation",
+      "lines": 40,
+      "sha256": "9a6bea81c1eadbba4dbca5c7db175f4dffdfcfc5ee2abaa74378cc44aa797250",
+      "signals": {
+        "guardrails": {
+          "never-write": 36,
+          "read-only": 27
+        },
+        "tools": {
+          "github/update_issue_body": 38
+        }
+      }
+    },
+    "automations/automation-health/README.md": {
+      "binary": false,
+      "bytes": 6100,
+      "kind": "automation",
+      "lines": 94,
+      "sha256": "5b4a9add0a1bf79f86fc5ccd7321443cf4bd975b700799dcc2fa9403cac8455d",
+      "signals": {
+        "tools": {
+          "github/actions_list": 21,
+          "github/add_issue_comment": 22,
+          "github/create_issue": 22,
+          "github/get_automation": 20,
+          "github/get_automation_revision": 20,
+          "github/issue_read": 21,
+          "github/lever": 36,
+          "github/list_automation_revisions": 20,
+          "github/list_automations": 20,
+          "github/pull_request_read": 21,
+          "github/search_issues": 21,
+          "github/search_pull_requests": 21,
+          "github/update_issue_body": 23
+        }
+      }
+    },
+    "automations/automation-health/prompt.md": {
+      "binary": false,
+      "bytes": 6213,
+      "kind": "automation",
+      "lines": 78,
+      "sha256": "37c7e9fc58eed08d32a318b1ffd2189775591d903d8b185deb03f0147eadba95",
+      "signals": {
+        "guardrails": {
+          "read-only": 46
+        },
+        "tools": {
+          "github/update_issue_body": 22
+        }
+      }
+    },
+    "automations/ci-speed/README.md": {
+      "binary": false,
+      "bytes": 6284,
+      "kind": "automation",
+      "lines": 67,
+      "sha256": "9a7ac4269263e2620a65f3f98fe3cd355e94cb25c0421643e169ec3a56e6f542",
+      "signals": {
+        "autonomy": {
+          "raise": 38
+        },
+        "ci": {
+          "untrusted-checkout": 44
+        },
+        "tools": {
+          "github/add_issue_comment": 64,
+          "github/create_issue": 64,
+          "github/merge_pull_request": 64,
+          "github/update_issue_body": 64,
+          "github/update_issue_labels": 64,
+          "github/update_issue_state": 64,
+          "github/update_pull_request_draft_state": 64,
+          "github/update_pull_request_title": 64,
+          "github/workflows": 44
+        }
+      }
+    },
+    "automations/ci-speed/prompt.md": {
+      "binary": false,
+      "bytes": 4319,
+      "kind": "automation",
+      "lines": 64,
+      "sha256": "428541926140021141cedf03d9f5b29ab15e990771425b84ec923e175bc4f9f9",
+      "signals": {
+        "ci": {
+          "untrusted-checkout": 63
+        },
+        "tools": {
+          "github/lever": 15,
+          "github/update_issue_body": 43,
+          "github/update_issue_labels": 38
+        }
+      }
+    },
+    "automations/improver/README.md": {
+      "binary": false,
+      "bytes": 4008,
+      "kind": "automation",
+      "lines": 69,
+      "sha256": "62fe86a7452f36838e6dd77bdfe7ba6ef4abb6e7b9a920e43de076020d56c826",
+      "signals": {
+        "tools": {
+          "github/add_issue_comment": 19,
+          "github/get_automation": 17,
+          "github/get_automation_revision": 17,
+          "github/issue_read": 17,
+          "github/list_automation_revisions": 17,
+          "github/pull_request_read": 17,
+          "github/search_issues": 17,
+          "github/search_pull_requests": 17,
+          "github/update_automation": 21
+        }
+      }
+    },
+    "automations/improver/prompt.md": {
+      "binary": false,
+      "bytes": 4402,
+      "kind": "automation",
+      "lines": 59,
+      "sha256": "2fa915a411ee9d247b736023c460ef43ce0a01c3cf6412303999ab67ba7dd3e7",
+      "signals": {
+        "guardrails": {
+          "never-write": 18
+        }
+      }
+    },
+    "automations/main-red-triage/README.md": {
+      "binary": false,
+      "bytes": 4356,
+      "kind": "automation",
+      "lines": 70,
+      "sha256": "17579daa0310ef15b608909f54bff36c245d1607b8680ed6fbf4fb2aea89e2c5",
+      "signals": {
+        "guardrails": {
+          "never-merge": 29
+        },
+        "tools": {
+          "github/actions_get": 18,
+          "github/actions_list": 18,
+          "github/add_issue_comment": 19,
+          "github/create_issue": 19,
+          "github/get_commit": 18,
+          "github/get_file_contents": 18,
+          "github/get_job_logs": 18,
+          "github/lever": 29,
+          "github/list_commits": 18,
+          "github/merge_pull_request": 22,
+          "github/pull_request_read": 18,
+          "github/search_code": 18,
+          "github/search_issues": 18,
+          "github/search_pull_requests": 18
+        }
+      }
+    },
+    "automations/main-red-triage/prompt.md": {
+      "binary": false,
+      "bytes": 5220,
+      "kind": "automation",
+      "lines": 69,
+      "sha256": "6e3529e182ef66ab2fa838ef27c2f771a4821020d482ae79762f8a6f3232df8e",
+      "signals": {
+        "guardrails": {
+          "never-merge": 10,
+          "never-write": 56
+        }
+      }
+    },
+    "automations/morning-brief/README.md": {
+      "binary": false,
+      "bytes": 4203,
+      "kind": "automation",
+      "lines": 69,
+      "sha256": "22d9dddd56414887f2d6bda20aa25f09da8626bba16729377548b5659022e956",
+      "signals": {
+        "tools": {
+          "github/actions_list": 19,
+          "github/add_issue_comment": 21,
+          "github/discussion_comment_write": 32,
+          "github/issue_read": 19,
+          "github/lever": 33,
+          "github/list_automations": 20,
+          "github/list_commits": 19,
+          "github/pull_request_read": 19,
+          "github/search_issues": 19,
+          "github/search_pull_requests": 19
+        }
+      }
+    },
+    "automations/morning-brief/prompt.md": {
+      "binary": false,
+      "bytes": 4023,
+      "kind": "automation",
+      "lines": 58,
+      "sha256": "ebd00bbf5fc2d97e36ee0dee0a453243310f66b01350463d5164abdaa99cafd9",
+      "signals": {}
+    },
+    "automations/pr-shepherd/README.md": {
+      "binary": false,
+      "bytes": 6223,
+      "kind": "automation",
+      "lines": 86,
+      "sha256": "de92b9bb0be829c4b387aaf7cc20a633d58e2cc3e8396a0b214cb4e7df661187",
+      "signals": {
+        "autonomy": {
+          "raise": 28
+        },
+        "tools": {
+          "github/actions_get": 25,
+          "github/actions_list": 25,
+          "github/add_issue_comment": 26,
+          "github/add_reply_to_pull_request_comment": 26,
+          "github/create_issue": 26,
+          "github/get_file_contents": 25,
+          "github/get_job_logs": 25,
+          "github/lever": 36,
+          "github/list_commits": 25,
+          "github/merge_pull_request": 28,
+          "github/pull_request_read": 25,
+          "github/resolve_review_thread": 27,
+          "github/search_code": 25,
+          "github/search_issues": 25,
+          "github/search_pull_requests": 25,
+          "github/update_pull_request_draft_state": 27
+        }
+      }
+    },
+    "automations/pr-shepherd/prompt.md": {
+      "binary": false,
+      "bytes": 6564,
+      "kind": "automation",
+      "lines": 80,
+      "sha256": "3499a4907dc09171f1f3a1e19e64841a4ebcf239b21cc41e0d58a9343b8dccdb",
+      "signals": {
+        "autonomy": {
+          "raise": 8
+        },
+        "guardrails": {
+          "never-push": 37
+        }
+      }
+    },
+    "automations/precision-review/README.md": {
+      "binary": false,
+      "bytes": 6352,
+      "kind": "automation",
+      "lines": 83,
+      "sha256": "3b355d0e80857b1f1954986ef8a4f32b689c3d41161e68b6769b9dd93455c5fd",
+      "signals": {
+        "guardrails": {
+          "read-only": 69
+        },
+        "tools": {
+          "github/add_pull_request_review_comment": 21,
+          "github/create_pull_request_review": 21,
+          "github/get_automation": 78,
+          "github/get_automation_revision": 78,
+          "github/get_commit": 21,
+          "github/get_file_contents": 21,
+          "github/list_automation_revisions": 78,
+          "github/list_commits": 21,
+          "github/pull_request_read": 21,
+          "github/search_code": 21,
+          "github/search_pull_requests": 78,
+          "github/submit_pending_pull_request_review": 21
+        }
+      }
+    },
+    "automations/precision-review/improver-prompt.md": {
+      "binary": false,
+      "bytes": 3885,
+      "kind": "automation",
+      "lines": 53,
+      "sha256": "cae08c95afefb50259b792af1544533eb619496a890c58814d484c7bdb4f99a7",
+      "signals": {
+        "guardrails": {
+          "never-write": 21
+        }
+      }
+    },
+    "automations/precision-review/prompt.md": {
+      "binary": false,
+      "bytes": 4281,
+      "kind": "automation",
+      "lines": 59,
+      "sha256": "8e5e63f5e7fd52ce0617daedebcd9d9d39e13c81bdd8dddd8c176f0b9bff03da",
+      "signals": {
+        "guardrails": {
+          "read-only": 6
+        }
+      }
+    },
+    "automations/repro-gate/README.md": {
+      "binary": false,
+      "bytes": 5428,
+      "kind": "automation",
+      "lines": 82,
+      "sha256": "7025136b2ae9d5c3cf4f1cfaf9de969c7ede8531a74bba88a3e9d4a36a53659f",
+      "signals": {
+        "guardrails": {
+          "never-merge": 15,
+          "no-secrets": 15
+        },
+        "tools": {
+          "github/add_issue_comment": 23,
+          "github/get_automation": 79,
+          "github/get_automation_revision": 79,
+          "github/get_file_contents": 21,
+          "github/issue_read": 21,
+          "github/list_automation_revisions": 79,
+          "github/list_commits": 21,
+          "github/search_code": 21,
+          "github/search_issues": 21,
+          "github/search_pull_requests": 21,
+          "github/update_issue_labels": 23
+        }
+      }
+    },
+    "automations/repro-gate/improver-prompt.md": {
+      "binary": false,
+      "bytes": 4032,
+      "kind": "automation",
+      "lines": 55,
+      "sha256": "331638b0bd324276b3619f240933627997f96f375c68c737a526b393a28f32f0",
+      "signals": {
+        "guardrails": {
+          "never-write": 23
+        }
+      }
+    },
+    "automations/repro-gate/prompt.md": {
+      "binary": false,
+      "bytes": 4419,
+      "kind": "automation",
+      "lines": 64,
+      "sha256": "35c2c0c102ce0a18a08b355837471705dfcfb4e57af1811d69e3bd35154a0b4c",
+      "signals": {
+        "guardrails": {
+          "never-delete": 52,
+          "never-merge": 52,
+          "no-secrets": 51
+        }
+      }
+    },
+    "automations/stall-watchdog/README.md": {
+      "binary": false,
+      "bytes": 2694,
+      "kind": "automation",
+      "lines": 49,
+      "sha256": "a992e11c9c16a1e9ca6ed5596dc601f0fc754cb9b0917f7b67ecab15215c29ff",
+      "signals": {
+        "tools": {
+          "github/actions_list": 17,
+          "github/add_issue_comment": 19,
+          "github/get_automation": 17,
+          "github/list_automations": 17,
+          "github/list_commits": 17,
+          "github/pull_request_read": 17,
+          "github/search_pull_requests": 17
+        }
+      }
+    },
+    "automations/stall-watchdog/prompt.md": {
+      "binary": false,
+      "bytes": 3061,
+      "kind": "automation",
+      "lines": 43,
+      "sha256": "934a9087491978196761eb48b82996406f0632b11d021c72b764d27966aee8b2",
+      "signals": {
+        "guardrails": {
+          "never-merge": 35
+        }
+      }
+    },
+    "automations/update-review/README.md": {
+      "binary": false,
+      "bytes": 3823,
+      "kind": "automation",
+      "lines": 74,
+      "sha256": "3367a39780c594dbbf7a5eb9a8b5198529a00b1c4cd00741d38fb648023498ed",
+      "signals": {
+        "guardrails": {
+          "never-merge": 6,
+          "never-write": 6,
+          "read-only": 40
+        },
+        "tools": {
+          "github/add_issue_comment": 29,
+          "github/create_issue": 29
+        }
+      }
+    },
+    "automations/update-review/prompt.md": {
+      "binary": false,
+      "bytes": 4075,
+      "kind": "automation",
+      "lines": 50,
+      "sha256": "2dbee606237a74f4e6ab3ed7ecb9ac85ca9a5013e2216d0d394f3099611684b1",
+      "signals": {}
+    },
+    "config/autonomy.example.yml": {
+      "binary": false,
+      "bytes": 1474,
+      "kind": "config",
+      "lines": 31,
+      "sha256": "02779711182eef3f6cb65ef1528c23e3004d58ff5ba6afe10634d279af66bfdd",
+      "signals": {
+        "autonomy": {
+          "raise": 7
+        },
+        "outside-write": {
+          "outside-path": 3
+        },
+        "tools": {
+          "github/lever": 1,
+          "github/workflows": 10
+        }
+      }
+    },
+    "config/personal.example.yml": {
+      "binary": false,
+      "bytes": 1179,
+      "kind": "config",
+      "lines": 30,
+      "sha256": "01041a8d0e78510a899d6da63e0249d89da0ac8bbe6973a51207ff94afdde7c0",
+      "signals": {
+        "autonomy": {
+          "raise": 6
+        },
+        "outside-write": {
+          "outside-path": 1
+        },
+        "tools": {
+          "github/lever": 4
+        }
+      }
+    },
+    "docs/autonomy.md": {
+      "binary": false,
+      "bytes": 5195,
+      "kind": "doc",
+      "lines": 74,
+      "sha256": "d33bfc1d45306973e3a7fd56b234403bc520b8268f0af8e21151e672e886db6a",
+      "signals": {
+        "autonomy": {
+          "grant": 43,
+          "raise": 15
+        },
+        "outside-write": {
+          "outside-path": 20
+        },
+        "tools": {
+          "github/lever": 36
+        }
+      }
+    },
+    "docs/examples.md": {
+      "binary": false,
+      "bytes": 1197,
+      "kind": "doc",
+      "lines": 50,
+      "sha256": "4ee8816b261b80e83c218027077470110f4d006f9e162b6db260f6ef9f638961",
+      "signals": {}
+    },
+    "docs/examples/arms.png": {
+      "binary": true,
+      "bytes": 232169,
+      "kind": "other",
+      "sha256": "39a1221fda0d2f2307b339b6e79c69426382e0a7cdd198a507615dee45ef9d7d",
+      "signals": {}
+    },
+    "docs/examples/automate.png": {
+      "binary": true,
+      "bytes": 230998,
+      "kind": "other",
+      "sha256": "3a5211cdbd5c0ca625d94cf3c52ddf290616e9ef07b1a5df935b1ec815412369",
+      "signals": {}
+    },
+    "docs/examples/autonomy.png": {
+      "binary": true,
+      "bytes": 274200,
+      "kind": "other",
+      "sha256": "8bd73cae6663b44e78368a85e47571da198df5d61cc7f74b8b86f1e4048722bc",
+      "signals": {}
+    },
+    "docs/examples/brief.png": {
+      "binary": true,
+      "bytes": 307213,
+      "kind": "other",
+      "sha256": "72c7f37b6f0b67942306d10716880a1ae17533efcd47bacfaa74c9731502f9f4",
+      "signals": {}
+    },
+    "docs/examples/examples.html": {
+      "binary": false,
+      "bytes": 25206,
+      "kind": "other",
+      "lines": 322,
+      "sha256": "c62b5185a16b5a897ba863b8c90c6061458e1abb32c70be30efa1d7f95a28816",
+      "signals": {
+        "autonomy": {
+          "raise": 289
+        },
+        "outside-write": {
+          "outside-path": 296
+        },
+        "tools": {
+          "github/lever": 84,
+          "github/workflows": 290
+        }
+      }
+    },
+    "docs/examples/lever.png": {
+      "binary": true,
+      "bytes": 227484,
+      "kind": "other",
+      "sha256": "d9b4325900abcf1d041cd10277e8c502f0b1019ea9b6059bc5d790e48212c37c",
+      "signals": {}
+    },
+    "docs/examples/loop.png": {
+      "binary": true,
+      "bytes": 242127,
+      "kind": "other",
+      "sha256": "b242f35cab26f4840e0279ac1e3cd2dd1a08466045cd500201797a471753d8ab",
+      "signals": {}
+    },
+    "docs/examples/mirror.png": {
+      "binary": true,
+      "bytes": 205603,
+      "kind": "other",
+      "sha256": "e7854b19cc318c12cc0e2fc970b3e48b3b3cd4b758fd26895c087a4e7ad6c195",
+      "signals": {}
+    },
+    "docs/examples/refactor.png": {
+      "binary": true,
+      "bytes": 199208,
+      "kind": "other",
+      "sha256": "47cfd978a774a351e40d0647b8ac1624d8b9bd61fd7e00dc1a7523aae175d540",
+      "signals": {}
+    },
+    "docs/examples/render.mjs": {
+      "binary": false,
+      "bytes": 1744,
+      "kind": "script",
+      "lines": 33,
+      "sha256": "f2969f60872a01156db6d2f27b60849db26e0c9ff91a2f5ea7b8d7bbbc24355e",
+      "signals": {
+        "secrets": {
+          "env-dump": 10
+        },
+        "sinks": {
+          "eval-dynamic": 27
+        }
+      }
+    },
+    "docs/examples/review.png": {
+      "binary": true,
+      "bytes": 179009,
+      "kind": "other",
+      "sha256": "7c4782446725e4a481097dd333834db568cbec1f27cc0dc45f84286f75d1b39d",
+      "signals": {}
+    },
+    "docs/examples/shepherd.png": {
+      "binary": true,
+      "bytes": 186405,
+      "kind": "other",
+      "sha256": "08d788f5050837f1bf4fa7b5d79b4ebe35216ef205a7ae0b1930e69e7af9aeaa",
+      "signals": {}
+    },
+    "docs/examples/steer.png": {
+      "binary": true,
+      "bytes": 197691,
+      "kind": "other",
+      "sha256": "5106aafedc12502e88b42c2d9fe9c6b85e8323106f0dbd1a9b4d5732de5f7869",
+      "signals": {}
+    },
+    "docs/examples/try.png": {
+      "binary": true,
+      "bytes": 389063,
+      "kind": "other",
+      "sha256": "264249efb5c030a9cd55d1ce1189d89427e942ea4df8fd44302d2a3b081b8e15",
+      "signals": {}
+    },
+    "docs/modes.md": {
+      "binary": false,
+      "bytes": 4095,
+      "kind": "doc",
+      "lines": 46,
+      "sha256": "a2651c1489515a19511c139c8b6675b1729b5e9ca9ef46d58c0c320b2e1a98c4",
+      "signals": {
+        "autonomy": {
+          "raise": 45
+        },
+        "guardrails": {
+          "read-only": 26
+        }
+      }
+    },
+    "docs/spend.md": {
+      "binary": false,
+      "bytes": 3439,
+      "kind": "doc",
+      "lines": 56,
+      "sha256": "354a6a0434daeea710c713f6468d8d1fbd086650bb7925fb08a1745688a35a5b",
+      "signals": {
+        "hidden": {
+          "silent-mode": 22
+        },
+        "outside-write": {
+          "outside-path": 34
+        },
+        "tools": {
+          "github/lever": 43
+        }
+      }
+    },
+    "docs/tracking.md": {
+      "binary": false,
+      "bytes": 4477,
+      "kind": "doc",
+      "lines": 60,
+      "sha256": "441a268452344f9a4e6ae4a2b071a5084a5b94a273af03f35201a1d5b46bac3f",
+      "signals": {
+        "guardrails": {
+          "read-only": 51
+        },
+        "outside-write": {
+          "outside-path": 22
+        }
+      }
+    },
+    "docs/update-review.md": {
+      "binary": false,
+      "bytes": 7115,
+      "kind": "doc",
+      "lines": 124,
+      "sha256": "8820c5251dae8044c88f8de2051438169c25574a9c6f0094f93d2041166e5db6",
+      "signals": {
+        "autonomy": {
+          "grant": 64,
+          "raise": 64
+        },
+        "ci": {
+          "untrusted-checkout": 49
+        },
+        "guardrails": {
+          "read-only": 58
+        },
+        "hidden": {
+          "ignore-previous": 57,
+          "no-disclosure": 57
+        },
+        "secrets": {
+          "token-name": 59
+        },
+        "sinks": {
+          "http-upload": 58,
+          "pipe-to-shell": 63
+        },
+        "tools": {
+          "github/workflows": 92
+        }
+      }
+    },
+    "plugin.json": {
+      "binary": false,
+      "bytes": 635,
+      "kind": "manifest",
+      "lines": 12,
+      "sha256": "9bceea703b0ed175ac0b0c31325bcc223863c500966121d3b87acbf006548080",
+      "signals": {
+        "domains": {
+          "agent-plugins.org": 2,
+          "github.com": 7
+        },
+        "tools": {
+          "github/lever": 7
+        }
+      }
+    },
+    "skills/automate-it/SKILL.md": {
+      "binary": false,
+      "bytes": 10964,
+      "kind": "skill",
+      "lines": 94,
+      "sha256": "9cd86b6306595d1045398c0975ea99ce905837760ef29a8965efe7a3a50c3789",
+      "signals": {
+        "autonomy": {
+          "raise": 53
+        },
+        "guardrails": {
+          "read-only": 31
+        },
+        "tools": {
+          "github/update_automation": 28
+        }
+      }
+    },
+    "skills/automate-it/reference.md": {
+      "binary": false,
+      "bytes": 9521,
+      "kind": "skill",
+      "lines": 150,
+      "sha256": "b3674aa6c277723839eff2a9269c403518f6ba2a904aa0859bb2aacd9f496a93",
+      "signals": {
+        "autonomy": {
+          "raise": 44
+        },
+        "tools": {
+          "github/actions_get": 34,
+          "github/actions_list": 34,
+          "github/add_issue_comment": 35,
+          "github/add_pull_request_review_comment": 37,
+          "github/add_reply_to_pull_request_comment": 36,
+          "github/create_issue": 45,
+          "github/create_pull_request_review": 37,
+          "github/discussion_comment_write": 46,
+          "github/get_automation": 47,
+          "github/get_automation_revision": 47,
+          "github/get_commit": 34,
+          "github/get_file_contents": 34,
+          "github/get_job_logs": 34,
+          "github/hide_": 49,
+          "github/issue_read": 34,
+          "github/lever": 61,
+          "github/list_automation_revisions": 47,
+          "github/list_automations": 47,
+          "github/list_commits": 34,
+          "github/list_label": 42,
+          "github/merge_pull_request": 44,
+          "github/pull_request_read": 34,
+          "github/resolve_review_thread": 38,
+          "github/search_code": 34,
+          "github/search_issues": 34,
+          "github/search_pull_requests": 34,
+          "github/submit_pending_pull_request_review": 37,
+          "github/update_automation": 49,
+          "github/update_issue_body": 49,
+          "github/update_issue_labels": 42,
+          "github/update_issue_state": 49,
+          "github/update_pull_request_draft_state": 43
+        }
+      }
+    },
+    "skills/autonomous-delivery/SKILL.md": {
+      "binary": false,
+      "bytes": 26339,
+      "kind": "skill",
+      "lines": 274,
+      "sha256": "6b9616775a27c1ddb36a5a5810b6d6a2abd126ca9090709b245a158ac1fcbe15",
+      "signals": {
+        "autonomy": {
+          "raise": 39
+        },
+        "domains": {
+          "gist.github.com": 13
+        },
+        "guardrails": {
+          "must-not": 205,
+          "never-write": 55,
+          "read-only": 75
+        },
+        "hidden": {
+          "silent-mode": 118
+        },
+        "tools": {
+          "github/lever": 57
+        }
+      }
+    },
+    "skills/autonomous-delivery/reference.md": {
+      "binary": false,
+      "bytes": 7158,
+      "kind": "skill",
+      "lines": 88,
+      "sha256": "c07bb97a6cc45ced82616142f8748d1a0ebc0f0fee08ab2f8ce94a234415285e",
+      "signals": {
+        "autonomy": {
+          "raise": 11
+        },
+        "hidden": {
+          "silent-mode": 39
+        },
+        "tools": {
+          "github/lever": 14
+        }
+      }
+    },
+    "skills/autonomy-dial/SKILL.md": {
+      "binary": false,
+      "bytes": 11888,
+      "kind": "skill",
+      "lines": 131,
+      "sha256": "028e66eaa521d4c5bc2f384d51193b0e13b7a12d30ab80464792548d8a046ed7",
+      "signals": {
+        "autonomy": {
+          "raise": 4
+        },
+        "guardrails": {
+          "never-merge": 122,
+          "read-only": 18
+        },
+        "outside-write": {
+          "outside-path": 45
+        },
+        "tools": {
+          "github/lever": 4
+        }
+      }
+    },
+    "skills/brief/SKILL.md": {
+      "binary": false,
+      "bytes": 11827,
+      "kind": "skill",
+      "lines": 113,
+      "sha256": "359e8f9dac80015a8e9ddcf367b6c007278bff1e768a004df1789968bdc501c0",
+      "signals": {
+        "autonomy": {
+          "raise": 76
+        },
+        "guardrails": {
+          "must-not": 9,
+          "read-only": 26
+        },
+        "outside-write": {
+          "outside-path": 42
+        },
+        "tools": {
+          "github/lever": 27
+        }
+      }
+    },
+    "skills/cross-model-review/SKILL.md": {
+      "binary": false,
+      "bytes": 9398,
+      "kind": "skill",
+      "lines": 113,
+      "sha256": "066c36bb5f49c4c064e8d5cccbbc90cbcccb4d5554f0f055f7cae313bce7d53e",
+      "signals": {
+        "autonomy": {
+          "raise": 18
+        }
+      }
+    },
+    "skills/experiment-arms/SKILL.md": {
+      "binary": false,
+      "bytes": 11363,
+      "kind": "skill",
+      "lines": 109,
+      "sha256": "6819006650ac44fa74151627ad4ddaad5a12bf20a7e438f8dc6016c859e229f0",
+      "signals": {
+        "autonomy": {
+          "raise": 73
+        },
+        "guardrails": {
+          "must-not": 37
+        }
+      }
+    },
+    "skills/experiment-arms/ci-adapter.md": {
+      "binary": false,
+      "bytes": 7285,
+      "kind": "skill",
+      "lines": 85,
+      "sha256": "0449d35c5697e035fd3fb6e3de8a3db05d5215dbdb3581e86a597baefbc0b16c",
+      "signals": {
+        "ci": {
+          "untrusted-checkout": 46
+        },
+        "tools": {
+          "github/workflows": 65
+        }
+      }
+    },
+    "skills/experiment-arms/scripts/arm_stats.py": {
+      "binary": false,
+      "bytes": 7835,
+      "kind": "script",
+      "lines": 171,
+      "sha256": "7fddb461ff8086bbcb3df3d6da72be55a66aa44761d1dacfb8317da5c0991483",
+      "signals": {}
+    },
+    "skills/experiment-arms/scripts/ci_arm_driver.py": {
+      "binary": false,
+      "bytes": 17799,
+      "kind": "script",
+      "lines": 382,
+      "sha256": "d55599341f6e78c36002df4a0ba4464cdd123656da6c84e4a10c8807a2baea70",
+      "signals": {
+        "guardrails": {
+          "must-not": 169
+        },
+        "secrets": {
+          "env-dump": 125
+        },
+        "sinks": {
+          "eval-dynamic": 81
+        }
+      }
+    },
+    "skills/experiment-arms/scripts/ci_arm_metrics.py": {
+      "binary": false,
+      "bytes": 6593,
+      "kind": "script",
+      "lines": 141,
+      "sha256": "cefaf7ad50b2a576bdd40e53fdbd9e79dfccf16f44c6ae5be993d388fdc698ad",
+      "signals": {}
+    },
+    "skills/find-the-loop/SKILL.md": {
+      "binary": false,
+      "bytes": 11957,
+      "kind": "skill",
+      "lines": 116,
+      "sha256": "a556f21cf4ecb1862ba0dcee6bda037733a52ab58270cf828363d849c7903a89",
+      "signals": {
+        "autonomy": {
+          "raise": 85
+        },
+        "hidden": {
+          "silent-mode": 107
+        },
+        "tools": {
+          "github/lever": 83,
+          "github/workflows": 45
+        }
+      }
+    },
+    "skills/find-the-loop/decision-tree.md": {
+      "binary": false,
+      "bytes": 7683,
+      "kind": "skill",
+      "lines": 107,
+      "sha256": "7170817f1146498809ef101c2c09a02b430428ae015b233946a906d6477f44e1",
+      "signals": {
+        "hidden": {
+          "silent-mode": 78
+        }
+      }
+    },
+    "skills/keep-the-pool-full/SKILL.md": {
+      "binary": false,
+      "bytes": 6963,
+      "kind": "skill",
+      "lines": 92,
+      "sha256": "ff0e430bd4cb8e084b3fa670d5f992afcad1e0c52b91da2045121ea1ca26a093",
+      "signals": {
+        "guardrails": {
+          "never-write": 60,
+          "no-secrets": 47
+        },
+        "tools": {
+          "github/actions_list": 64,
+          "github/add_issue_comment": 64,
+          "github/create_issue": 64,
+          "github/get_file_contents": 64,
+          "github/get_job_logs": 64,
+          "github/issue_read": 64,
+          "github/list_label": 64,
+          "github/search_code": 64,
+          "github/search_issues": 64,
+          "github/search_pull_requests": 64,
+          "github/update_issue_labels": 64
+        }
+      }
+    },
+    "skills/landing-plan/SKILL.md": {
+      "binary": false,
+      "bytes": 8865,
+      "kind": "skill",
+      "lines": 98,
+      "sha256": "2f3c05ba9668742dfc38c5de3bf5f3f0de47946400fef35dc93d7ef5717ef103",
+      "signals": {
+        "autonomy": {
+          "raise": 4
+        },
+        "tools": {
+          "github/lever": 62
+        }
+      }
+    },
+    "skills/landing-plan/scripts/landing_graph.py": {
+      "binary": false,
+      "bytes": 9595,
+      "kind": "script",
+      "lines": 225,
+      "sha256": "a42628339f756c608d8a7f0388f2daf67ef9b0e339320d403ee34fe2ff411b8d",
+      "signals": {
+        "guardrails": {
+          "never-merge": 15,
+          "read-only": 15
+        },
+        "sinks": {
+          "eval-dynamic": 35
+        },
+        "tools": {
+          "github/workflows": 19
+        }
+      }
+    },
+    "skills/lever/SKILL.md": {
+      "binary": false,
+      "bytes": 8970,
+      "kind": "skill",
+      "lines": 135,
+      "sha256": "d233a03fa5cbdb3aa1ea289c3187e650d8d8a3f80d2cd5434c124d521ee24d9f",
+      "signals": {
+        "autonomy": {
+          "raise": 35
+        },
+        "guardrails": {
+          "never-write": 106
+        },
+        "outside-write": {
+          "outside-path": 3
+        },
+        "tools": {
+          "github/lever": 68
+        }
+      }
+    },
+    "skills/pr-shepherd/SKILL.md": {
+      "binary": false,
+      "bytes": 11833,
+      "kind": "skill",
+      "lines": 109,
+      "sha256": "4b26da190b5ff8e03100f7bcdd7058dc79fc3bf1776c9d4d16ca67425984fc0f",
+      "signals": {
+        "autonomy": {
+          "raise": 26
+        },
+        "hidden": {
+          "silent-mode": 99
+        },
+        "tools": {
+          "github/lever": 26
+        }
+      }
+    },
+    "skills/pr-shepherd/pr-state.graphql": {
+      "binary": false,
+      "bytes": 1926,
+      "kind": "other",
+      "lines": 65,
+      "sha256": "a44a4ffafe1259699e83c36691768559a892b3f507c903308c814b26973f788b",
+      "signals": {}
+    },
+    "skills/progress-contract/SKILL.md": {
+      "binary": false,
+      "bytes": 10476,
+      "kind": "skill",
+      "lines": 126,
+      "sha256": "7e8fe6cbf52b537115711b19ea189414ab1683620f3e12b0cbbb7f17232a6f6a",
+      "signals": {
+        "guardrails": {
+          "never-merge": 38,
+          "read-only": 38
+        },
+        "hidden": {
+          "silent-mode": 70
+        },
+        "outside-write": {
+          "outside-path": 36
+        },
+        "tools": {
+          "github/lever": 44
+        }
+      }
+    },
+    "skills/prompt-mirror/SKILL.md": {
+      "binary": false,
+      "bytes": 11529,
+      "kind": "skill",
+      "lines": 124,
+      "sha256": "5474a1d7229d40e2e8a94bd1dad29012ff0e0bcf99c0c598d42b36901e159af3",
+      "signals": {
+        "outside-write": {
+          "destructive": 98,
+          "outside-path": 21
+        }
+      }
+    },
+    "skills/prompt-mirror/scripts/mine_sessions.py": {
+      "binary": false,
+      "bytes": 32091,
+      "kind": "script",
+      "lines": 708,
+      "sha256": "95edae9a724f3b28f6dbeb1a601b136712aef67bcfae0ca3a826355b4a04056a",
+      "signals": {
+        "guardrails": {
+          "read-only": 4
+        },
+        "outside-write": {
+          "outside-path": 8
+        },
+        "secrets": {
+          "env-dump": 608
+        }
+      }
+    },
+    "skills/refactor-pipeline/SKILL.md": {
+      "binary": false,
+      "bytes": 9801,
+      "kind": "skill",
+      "lines": 113,
+      "sha256": "48a07ab5db9fd42bb1f60c79969ab6cd5f31ba67090e8f37fccc50d93b314a09",
+      "signals": {}
+    },
+    "skills/run-health-review/SKILL.md": {
+      "binary": false,
+      "bytes": 10510,
+      "kind": "skill",
+      "lines": 118,
+      "sha256": "b5a30d5f75bf41e8c2d010a53c119f8cb22bcded717af2451ac7f61bb4618c7b",
+      "signals": {
+        "guardrails": {
+          "read-only": 26
+        }
+      }
+    },
+    "skills/steer-once/SKILL.md": {
+      "binary": false,
+      "bytes": 11309,
+      "kind": "skill",
+      "lines": 135,
+      "sha256": "f3822cf86844d6e9f2db8b979406181e668eae460d76f685dcf2ef06d1ce3566",
+      "signals": {
+        "outside-write": {
+          "outside-path": 57
+        },
+        "tools": {
+          "github/copilot": 57,
+          "github/instructions": 57,
+          "github/lever": 57,
+          "github/skills": 57
+        }
+      }
+    },
+    "skills/update-review/SKILL.md": {
+      "binary": false,
+      "bytes": 9160,
+      "kind": "skill",
+      "lines": 147,
+      "sha256": "ca2d9fb07d97bec391773aaf793497e20cec074675e9cd52ed9f25d55deab4c6",
+      "signals": {
+        "autonomy": {
+          "raise": 93
+        },
+        "ci": {
+          "untrusted-checkout": 80
+        },
+        "guardrails": {
+          "never-push": 98,
+          "no-secrets": 98,
+          "read-only": 98
+        },
+        "outside-write": {
+          "destructive": 97
+        },
+        "secrets": {
+          "ci-secret": 95
+        },
+        "sinks": {
+          "pipe-to-shell": 16
+        }
+      }
+    },
+    "skills/update-review/reference.md": {
+      "binary": false,
+      "bytes": 7807,
+      "kind": "skill",
+      "lines": 138,
+      "sha256": "780ec01a23389cb3af12d95c080c561041214e9a33e2460821b50f7b12caed2e",
+      "signals": {
+        "autonomy": {
+          "raise": 29
+        },
+        "ci": {
+          "untrusted-checkout": 31
+        },
+        "guardrails": {
+          "no-secrets": 120,
+          "read-only": 65
+        },
+        "hidden": {
+          "ignore-previous": 26,
+          "no-disclosure": 26,
+          "silent-mode": 26
+        },
+        "outside-write": {
+          "destructive": 33,
+          "privilege": 36
+        },
+        "secrets": {
+          "ci-secret": 35
+        },
+        "sinks": {
+          "eval-dynamic": 38
+        },
+        "tools": {
+          "github/create_issue": 63,
+          "github/workflows": 109,
+          "shell/run": 63
+        },
+        "unpinned": {
+          "owner/repo@ref": 41
+        }
+      }
+    },
+    "skills/update-review/scripts/update_review.py": {
+      "binary": false,
+      "bytes": 39703,
+      "kind": "script",
+      "lines": 883,
+      "sha256": "b1174110661ef288e3bceea7a5c358ec2f3eb05411bb14290da06ffb45d741b1",
+      "signals": {
+        "autonomy": {
+          "raise": 816
+        },
+        "ci": {
+          "untrusted-checkout": 112
+        },
+        "domains": {
+          "collect.example": 798,
+          "get.example": 788,
+          "status.example": 824
+        },
+        "guardrails": {
+          "must-not": 835,
+          "never-push": 740,
+          "read-only": 124
+        },
+        "hidden": {
+          "no-disclosure": 780
+        },
+        "outside-write": {
+          "outside-path": 93,
+          "privilege": 72
+        },
+        "secrets": {
+          "ci-secret": 488,
+          "env-dump": 86,
+          "keychain": 90,
+          "secret-file": 87,
+          "token-name": 88
+        },
+        "sinks": {
+          "base64-decode": 82,
+          "dns-exfil": 81,
+          "eval-dynamic": 83,
+          "http-upload": 798,
+          "netcat": 79,
+          "pipe-to-shell": 788,
+          "ssh-remote": 80
+        },
+        "tools": {
+          "github/plugin": 510,
+          "github/workflows": 150
+        }
+      }
+    },
+    "talk/slides.html": {
+      "binary": false,
+      "bytes": 299650,
+      "kind": "other",
+      "lines": 649,
+      "sha256": "c1cb480bb6c484096272189268fe0e8d594bb146081a5f301d34105df2802491",
+      "signals": {
+        "autonomy": {
+          "raise": 465
+        },
+        "obfuscation": {
+          "base64-blob": 8
+        },
+        "outside-write": {
+          "outside-path": 469
+        },
+        "tools": {
+          "github/lever": 500
+        }
+      }
+    },
+    "templates/brief.md": {
+      "binary": false,
+      "bytes": 1211,
+      "kind": "doc",
+      "lines": 39,
+      "sha256": "735651739e8304f3e4dd4e6df453dea543e85ff88d8d22b3eef1f4d131df3598",
+      "signals": {
+        "autonomy": {
+          "raise": 24
+        }
+      }
+    },
+    "templates/handoff.md": {
+      "binary": false,
+      "bytes": 597,
+      "kind": "doc",
+      "lines": 25,
+      "sha256": "b931545b4def7083604431a461d015c45fa2630291dce236dc4945150dfb4226",
+      "signals": {}
+    },
+    "templates/ledger.md": {
+      "binary": false,
+      "bytes": 562,
+      "kind": "doc",
+      "lines": 10,
+      "sha256": "990e39a48016ce23305ca352322f78503fdda4b6c82ea00dc492f118add8e864",
+      "signals": {}
+    },
+    "templates/loop-card.md": {
+      "binary": false,
+      "bytes": 1016,
+      "kind": "doc",
+      "lines": 18,
+      "sha256": "949d65609c6a6bc379a1975732d1b068e0f68c95f9f05f9e61f8cdcc4d03e42d",
+      "signals": {
+        "autonomy": {
+          "raise": 16
+        }
+      }
+    },
+    "templates/status-digest.md": {
+      "binary": false,
+      "bytes": 701,
+      "kind": "doc",
+      "lines": 19,
+      "sha256": "0841ec002067c683c0543b04371f95788dccacd9c75a51a32cf83e74b84bca9b",
+      "signals": {}
+    }
+  },
+  "generated_at": "2026-11-20T05:36:40Z",
+  "history": [
+    {
+      "approved_at": "2026-11-20T05:36:40Z",
+      "approved_by": "anglelion",
+      "commit": "dbc67bc39bc5c9958543fbf6c85bc511c3454d42",
+      "files": 88,
+      "note": "v0.2.0 initial approved snapshot"
+    }
+  ],
+  "policy": {
+    "allowed_action_owners": [
+      "actions",
+      "github"
+    ],
+    "ignore_paths": [],
+    "max_bytes": 8000000,
+    "max_files": 400,
+    "max_growth_ratio": 2.0,
+    "min_growth_bytes": 262144
+  },
+  "schema": 1
+}
