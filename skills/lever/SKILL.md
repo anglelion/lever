@@ -1,6 +1,6 @@
 ---
 name: lever
-description: The one lever command. `/lever <verb> [args]` runs a lever skill directly (loop, arms, review, brief, deliver, refactor, backlog, shepherd, land, status, automate, health, mirror, steer, autonomy, spend, setup, help). `/lever <plain words>` picks the verb for you, says which in one line, then runs it. Also reads and writes the user's personal dials in `~/.copilot/lever.yml`. Use when the user types /lever, asks "which lever skill should I use?", or wants to see or change their autonomy or spend dial.
+description: The one lever command. `/lever <verb> [args]` runs a lever skill directly (loop, arms, review, recheck, brief, deliver, refactor, backlog, shepherd, land, status, automate, health, mirror, steer, autonomy, spend, setup, help). `/lever <plain words>` picks the verb for you, says which in one line, then runs it. Also reads and writes the user's personal dials in `~/.copilot/lever.yml`. Use when the user types /lever, asks "which lever skill should I use?", or wants to see or change their autonomy or spend dial.
 ---
 
 # lever
@@ -23,6 +23,7 @@ LOOP    make something measurably better
   loop <problem>                 find the feedback loop first: a Loop Card
   arms [ideas]                   one agent per idea, against a control
   review [pr|plan]               several models, blind; only agreed findings
+  recheck [update|pr]            did this update quietly gain a capability? baseline vs head
 
 RUN     make it happen without you
   automate <task>                turn a chore into a paused Copilot Automation
@@ -51,6 +52,7 @@ YOU     tune lever to how you work
 | `loop` | [`find-the-loop`](../find-the-loop/) | Loop |
 | `arms` | [`experiment-arms`](../experiment-arms/) | Loop |
 | `review` | [`cross-model-review`](../cross-model-review/) | Loop |
+| `recheck` | [`update-review`](../update-review/) | Loop |
 | `automate` | [`automate-it`](../automate-it/) | Run |
 | `health` | [`run-health-review`](../run-health-review/) | Run |
 | `mirror` | [`prompt-mirror`](../prompt-mirror/) | You |
@@ -75,6 +77,7 @@ YOU     tune lever to how you work
 | a huge mechanical change: split, extract, migrate, delete | `refactor` |
 | "get this merged", "monitor CI until green", "fix the review comments" | `shepherd`, or `land` for a stack or batch |
 | "review this", "is this plan any good?" | `review` |
+| an update landed, or a plugin you use just shipped: "did it gain anything?", "rug pull?" | `recheck` |
 | "status?", "is it still running?" | `status` |
 | "why did it stall?", "the automation is noisy" | `health` |
 | "I keep doing this", "every morning I…", "make this an automation" | `automate` |

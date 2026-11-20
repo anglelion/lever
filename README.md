@@ -53,6 +53,7 @@ More in the **[examples gallery](docs/examples.md)**: experiment arms, a brief, 
 /lever mirror last 30 days
 /lever steer push immediately, then verify
 /lever autonomy agents can merge docs PRs in this repo, nothing else
+/lever recheck v0.2.0. did the update gain anything it didn't have before?
 ```
 
 </details>
@@ -75,6 +76,7 @@ LOOP    make something measurably better
   loop <problem>                 find the feedback loop first: a Loop Card
   arms [ideas]                   one agent per idea, against a control
   review [pr|plan]               several models, blind; only agreed findings
+  recheck [update|pr]            did this update quietly gain a capability? baseline vs head
 
 RUN     make it happen without you
   automate <task>                turn a chore into a paused Copilot Automation
@@ -90,6 +92,28 @@ YOU     tune lever to how you work
 ```
 
 Each verb is a skill in [`skills/`](skills/). The `/` menu shows only `/lever`. Skills that only read and advise, like `loop`, can still load on their own when your ask fits. Anything that pushes, files, opens PRs or schedules runs waits for `/lever <verb>` or an explicit ask.
+
+## Updates are a supply-chain event
+
+A plugin is code plus prompts, and prompts are executable text for an agent. The cheap place to hide a
+payload is the prose: one sentence addressed to the model, a `curl` piped into a shell, a trigger the
+automation never had. Reading the diff catches the obvious ones; nobody keeps doing it at 2 a.m.
+
+`/lever recheck` compares an update's **capabilities** with the last version you approved — tools granted,
+hosts reachable, credentials read, writes outside the repo, CI permissions, unpinned actions, guardrail
+clauses — and answers PASS, MANUAL_REVIEW or REJECT. Rename a skill, rewrite a paragraph, split a file:
+silent. Add an outbound POST next to a token read: rejected, with the lines that did it.
+
+```bash
+python skills/update-review/scripts/update_review.py check --root .     # 0.6 s, no model, no network
+python skills/update-review/scripts/update_review.py approve --by you   # a human approves, once
+```
+
+The baseline (`.lever/update-review/baseline.json`) is the trust anchor, so it moves through a normal
+reviewed PR. Gate every update with [`.github/workflows/update-review.yml`](.github/workflows/update-review.yml),
+put `.lever/**` behind [CODEOWNERS](.github/CODEOWNERS), and let
+[`automations/update-review`](automations/update-review/) post the verdict on updates from outside.
+Full rules, cases and wiring: [docs/update-review.md](docs/update-review.md).
 
 ## Your dials
 

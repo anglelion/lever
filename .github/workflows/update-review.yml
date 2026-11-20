@@ -1,0 +1,85 @@
+name: update review
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "skills/**"
+      - "automations/**"
+      - "plugin.json"
+      - ".github/**"
+      - ".lever/**"
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: update-review-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  recheck:
+    name: recheck
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: rules work here
+        run: python skills/update-review/scripts/update_review.py selftest
+
+      - name: compare against the approved baseline
+        id: check
+        shell: bash
+        run: |
+          set +e
+          python skills/update-review/scripts/update_review.py check --root . \
+            --report "$RUNNER_TEMP/update-review.json" > "$RUNNER_TEMP/report.md"
+          code=$?
+          set -e
+          echo "code=$code" >> "$GITHUB_OUTPUT"
+          cat "$RUNNER_TEMP/report.md" >> "$GITHUB_STEP_SUMMARY"
+          echo "verdict exit code: $code"
+
+      - name: upload the evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: update-review
+          path: ${{ runner.temp }}/update-review.json
+          if-no-files-found: warn
+
+      - name: comment the verdict
+        if: github.event_name == 'pull_request' && steps.check.outputs.code != '0'
+        continue-on-error: true          # a repo with read-only workflow permissions still gets the gate
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          gh pr comment "${{ github.event.pull_request.number }}" \
+            --body-file "$RUNNER_TEMP/report.md" --edit-last \
+            || gh pr comment "${{ github.event.pull_request.number }}" \
+                 --body-file "$RUNNER_TEMP/report.md"
+
+      - name: fail the gate
+        if: steps.check.outputs.code != '0'
+        shell: bash
+        run: |
+          case "${{ steps.check.outputs.code }}" in
+            2) echo "::error::MANUAL_REVIEW — a human must read the named findings before this lands." ;;
+            3) echo "::error::REJECT — the update adds a blocking capability. Revert or split it." ;;
+            *) echo "::error::update review failed to run." ;;
+          esac
+          exit 1

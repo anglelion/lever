@@ -11,6 +11,7 @@ Use [`automate-it`](../skills/automate-it/SKILL.md) to decide whether something 
 | [pr-shepherd](pr-shepherd/) | Drives opted-in PRs to green on the exact head, threads dispositioned, landed at your autonomy level | label opt-in, CI failure, review submitted, merge conflict, hourly sweep | push, rerun, reply/resolve threads, mark ready; merge only at L3/L4 | PRs landed within 24 h of first green |
 | [main-red-triage](main-red-triage/) | Classifies default-branch CI failures as flake, regression or infra; one issue per cause | `workflow_run` failure on the default branch, hourly sweep | rerun, issue/comment; fix PR if enabled | Minutes main is red per week |
 | [precision-review](precision-review/) (+ improver) | At most 2 proven findings per PR, COMMENT only, silent by default | ready for review; opened and synchronize with `-is:draft` | one COMMENT review | Findings addressed before merge / posted |
+| [update-review](update-review/) | Deterministic capability diff of an update against the approved baseline: PASS silent, MANUAL_REVIEW or REJECT with the lines; never approves, never edits the baseline | PRs touching `skills/`, `automations/`, `plugin.json`, `.github/`; push to the default branch | one comment per head SHA | Blocking findings a human kept / posted |
 | [repro-gate](repro-gate/) (+ improver) | Classifies new issues; `repro-confirmed` only with a test it wrote that fails | issue opened, `needs-repro` label, daily sweep | test branch, comment, labels | Confirmed labels a human kept / applied |
 | [morning-brief](morning-brief/) | Daily focus brief: new issues, PRs waiting on you, main CI, top 3 | daily interval | one comment on a digest issue | Focus items acted on within 24 h |
 | [automation-health](automation-health/) | Weekly review of all automations: no-op %, failures, cost per useful output, least-privilege lint; one change or none | weekly interval, `automation_failed` | report comment, one issue per repeated failure, proposals | Cost per useful output |
@@ -45,8 +46,9 @@ If you're starting from nothing:
 2. **main-red-triage**, because a red default branch blocks everyone.
 3. **pr-shepherd** at L2 on a few opted-in PRs.
 4. **precision-review** and **repro-gate**, each with its improver created paused, enabled after about 20 outputs.
-5. **automation-health**, once you have three or more automations to compare.
-6. **ci-speed**, once you have a manual time-to-green baseline.
+5. **update-review**, once you have a committed baseline and the `update review / recheck` check required on `main` — it is the only recipe that judges the other recipes' updates.
+6. **automation-health**, once you have three or more automations to compare.
+7. **ci-speed**, once you have a manual time-to-green baseline.
 
 ## Not here yet
 

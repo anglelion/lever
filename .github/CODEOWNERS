@@ -1,0 +1,6 @@
+# The baseline is the trust anchor for update review: whoever approves it approves the update.
+# Keep it behind an owner's review, and keep the gate's own definition there too.
+
+/.lever/                                @anglelion
+/.github/workflows/update-review.yml    @anglelion
+/skills/update-review/                  @anglelion

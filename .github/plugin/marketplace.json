@@ -3,13 +3,13 @@
   "owner": { "name": "GitHub" },
   "metadata": {
     "description": "lever: feedback loops for coding agents",
-    "version": "0.1.0"
+    "version": "0.2.0"
   },
   "plugins": [
     {
       "name": "lever",
-      "description": "Feedback loops for coding agents. Find the metric, let agents iterate against it, and move repeatable work into Copilot Automations, with an autonomy dial you control.",
-      "version": "0.1.0",
+      "description": "Feedback loops for coding agents. Find the metric, let agents iterate against it, move repeatable work into Copilot Automations, with an autonomy dial you control — and re-check every update against the version you approved.",
+      "version": "0.2.0",
       "source": "./"
     }
   ]
